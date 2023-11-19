@@ -48,16 +48,18 @@ body {
   display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 30px;
-  width: 95%;
+  width: 90%;
   height: 450px;
   overflow-y: auto;
   overflow-x: auto;
   align-self: center;
+  text-align: center;
 }
 
 
 .movieCards {
-  padding: 20px 20px 20px 20px;
+  width: 250px;
+  cursor: pointer;
 }
 
 .movieCards > img {
