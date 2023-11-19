@@ -16,9 +16,11 @@ const SearchPage = () => {
     }, []);
 
     useEffect(() => {  
-        return () => {
-        getMovieData()
-        }
+        if (input.length === 0) {
+            getDefaultMovies();
+          } else if (input.length >= 1) {
+            getMovieData();
+          }
     }, [input])
 
     const getDefaultMovies = async () => {
