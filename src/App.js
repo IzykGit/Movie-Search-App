@@ -1,14 +1,17 @@
 import { useState, useEffect } from 'react'
 import './App.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-function App() {
+
+const App = () => {
 
   const [movie, setMovie] = useState([])
   const [input, setInput] = useState("")
-  const [ImageSource, setImageSource] = useState('')
 
   useEffect(() => {
     getDefaultMovies();
+    AOS.init()
   }, []);
 
   useEffect(() => {  
@@ -37,35 +40,30 @@ function App() {
       console.log(`Failed to get movie ${err}`)
     }
   }
+  
 
-  const currentMovie = (poster) => {
-    setImageSource(poster);
-  };
 
- function hideImg() {
-  setImageSource('');
- }
+
 
   return (
     <div className="App">
         <div className='searchBarContainer'>
-            <div className='searchBar'>
-              <h1>Search Movie</h1>
-              <input onChange={((e) => setInput(e.target.value))} id='movieSearch'/>
-            </div>
-            <div>
-              <img src={ImageSource} onError={hideImg} id='movieImage' alt=''/>
-            </div>
+          <div>
+            <h1>Search Movie</h1>
+            <input onChange={((e) => setInput(e.target.value))} id='movieSearch'/>
+          </div>
         </div>
         <div className='resultContainer'>
             {movie.map((Search) => (
                 <div key={Search.imdbID} className='movieCards'>
-                <img id='movie' onMouseOver={() => currentMovie(Search.Poster)} onMouseOut={hideImg} alt='Could not load' src={Search.Poster}/>
+                <img id='movie' alt='Could not load' src={Search.Poster}/>
+                <p id='title'>{Search.Title}</p>
               </div>
             ))}
         </div>
     </div>
   );
 }
+
 
 export default App;
