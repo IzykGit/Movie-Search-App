@@ -14,7 +14,6 @@
 }
 
 body {
-  overflow: hidden;
   background-color: #BCBDC0;
   
 }
@@ -177,7 +176,58 @@ body {
   top: -50px;
 }
 
+.movieDetails > h1 {
+  font-size: 75px;
+}
+
+.movieDetails > h2 {
+  font-size: 35px;
+}
+
+.movieDetails > p {
+  font-size: 25px;
+}
+
 .movieImage {
   box-shadow: 15px 15px 0px 10px #565857;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 815px){
+  .movieImage {
+    width: 250px;
+  }
+
+  .movieDetails > h1 {
+    font-size: 50px;
+  }
+
+  .movieDetails > h2 {
+    font-size: 25px;
+  }
+
+  .movieDetails > p {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 685px) {
+  .movieImage {
+    width: 150px;
+    box-shadow: 10px 10px 0px 5px #565857;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .detailsContainer {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .movieDetails > h1 {
+    font-size: 30px;
+  }
 }

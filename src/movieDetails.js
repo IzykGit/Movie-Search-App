@@ -37,10 +37,10 @@ const MovieDetails = (props) => {
     return (
         <div className='detailsContainer'>
             <div className='movieDetails'>
-                <h1 data-aos-delay={100} data-aos="fade-down" style={{fontSize: 75}}>{movie.Title}</h1>
-                <p  data-aos-delay={300} data-aos="fade-down" style={{fontSize: 25}}>{movie.Plot}</p>
-                <h2 data-aos-delay={600} data-aos="fade-down"  style={{fontSize: 35}}>Directed By</h2>
-                <p  data-aos-delay={800} data-aos="fade-down" style={{fontSize: 25}}>{movie.Director}</p>
+                <h1 data-aos-delay={100} data-aos="fade-down">{movie.Title}</h1>
+                <p  data-aos-delay={300} data-aos="fade-down">{movie.Plot}</p>
+                <h2 data-aos-delay={600} data-aos="fade-down">Directed By</h2>
+                <p  data-aos-delay={800} data-aos="fade-down">{movie.Director}</p>
             </div>
             <div>
                 <img className='movieImage' data-aos="fade-up" src={movie.Poster} alt={movie.Title}/>
