@@ -65,7 +65,7 @@ body {
   grid-template-columns: auto auto auto auto;
   gap: 30px;
   width: 90%;
-  max-height: 550px;
+  height: 550px;
   overflow-y: auto;
   overflow-x: auto;
   align-self: center;
@@ -106,4 +106,78 @@ body {
   font-size: 18px;
   transition: 0.5s;
   transition-delay: 0.2s;
+}
+
+@media screen and (max-height: 1800px) {
+    .resultContainer{
+      height: 1350px;
+    }
+}
+
+@media screen and (max-height: 1600px) {
+  .resultContainer{
+    height: 1100px;
+  }
+}
+
+@media screen and (max-height: 1250px) {
+  .resultContainer{
+    height: 800px;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+    .resultContainer {
+      grid-template-columns: auto auto auto;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .resultContainer {
+      grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .resultContainer {
+      grid-template-columns: auto;
+    
+    }
+
+    .movieCards {
+      width: 200px;
+    }
+
+    .movieCards > img {
+      width: 200px;
+    }
+
+    #movieSearch {
+      width: 200px;
+    }
+}
+
+
+
+
+
+/* Movie Details Page */
+
+
+.detailsContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  top: 150px;
+}
+
+.movieDetails {
+  width: 50%;
+  position: relative;
+  top: -50px;
+}
+
+.movieImage {
+  box-shadow: 15px 15px 0px 10px #565857;
+  border-radius: 5px;
 }
