@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
 *::-webkit-scrollbar {
@@ -8,12 +9,14 @@
 * {
   -ms-overflow-style: none;
   scrollbar-width: none; 
-
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  color: #393939;
 }
 
 body {
   overflow: hidden;
+  background-color: #BCBDC0;
+  
 }
 
 .App {
@@ -24,7 +27,6 @@ body {
 }
 
 .searchBarContainer {
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,13 +34,27 @@ body {
   text-align: center;
   width: 95%;
   margin-bottom: 20px;
-  height: 200px;
+  height: 100px;
   padding: 20px;
 }
 
 #movieSearch {
-  font-size: 15px;
+  font-size: 20px;
   padding: 5px;
+  border: none;
+  border-bottom: 2px solid black;
+  width: 500px;
+  background-color: #BCBDC0;
+}
+
+#movieSearch::-webkit-input-placeholder {
+  opacity: 30%;
+  color: black;
+}
+
+#movieSearch:focus {
+  outline: none;
+
 }
 
 
@@ -49,7 +65,7 @@ body {
   grid-template-columns: auto auto auto auto;
   gap: 30px;
   width: 90%;
-  height: 450px;
+  max-height: 550px;
   overflow-y: auto;
   overflow-x: auto;
   align-self: center;
@@ -58,18 +74,36 @@ body {
 
 
 .movieCards {
+  padding: 20px 0px 0px 0px;
   width: 250px;
+  height: 400px;
   cursor: pointer;
 }
 
 .movieCards > img {
   width: 220px;
   height: auto;
+  border-radius: 20px;
   transition: 0.5s;
   transition-delay: 0.2s;
+  box-shadow: 5px 10px 0px 5px #565857;
+  margin-bottom: 5px;
 }
 
 .movieCards > img:hover {
   transform: scale(1.1);
   transform-origin: center center;
+  margin-bottom: 20px;
+}
+
+.movieCards > img:hover + #title {
+  font-size: 20px;
+  transition: 0.5s;
+  transition-delay: 0.2s;
+}
+
+.movieCards >img:not(:hover) + #title {
+  font-size: 18px;
+  transition: 0.5s;
+  transition-delay: 0.2s;
 }

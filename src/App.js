@@ -1,8 +1,7 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MovieDetails from './movieDetails'
+import MovieDetails from "./movieDetails";
 import SearchPage from "./searchPage";
-
 
 
 const App = () => {
@@ -35,7 +34,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SearchPage input={input} setInput={setInput} getMovieData={getMovieData} getDefaultMovies={getDefaultMovies} movie={movie}/>} />
-        <Route path="/movie_details" element={<MovieDetails movie={movie}/>} />
+        <Route path="/movie_details/:imdbID" element={<MovieDetails getMovieData={getMovieData} movie={movie}/>} />
       </Routes>
     </BrowserRouter>
   )
