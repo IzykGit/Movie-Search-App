@@ -15,35 +15,30 @@
 
 body {
   background-color: #BCBDC0;
-  
+  margin: 0;
 }
 
 .App {
   justify-content: center;
   display: flex;
   flex-direction: column;
-  width: 99.9%;
 }
 
 .searchBarContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 95%;
-  margin-bottom: 20px;
-  height: 100px;
-  padding: 20px;
+  width: 100%;
+  padding: 30px;
+  background-color: rgb(163, 163, 163);
 }
 
 #movieSearch {
-  font-size: 20px;
+  font-size: 25px;
   padding: 5px;
   border: none;
   border-bottom: 2px solid black;
-  width: 500px;
-  background-color: #BCBDC0;
+  width: 30%;
+  background-color: rgb(163, 163, 163);
 }
 
 #movieSearch::-webkit-input-placeholder {
@@ -61,27 +56,26 @@ body {
 .resultContainer {
   position: relative;
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  gap: 30px;
-  width: 90%;
-  height: 550px;
+  justify-content: center;
+  grid-template-columns: auto auto auto auto auto auto;
+  gap: 20px;
+  width: 100%;
   overflow-y: auto;
   overflow-x: auto;
   align-self: center;
   text-align: center;
+  background-color: rgb(190, 190, 190);
 }
 
 
 .movieCards {
-  padding: 20px 0px 0px 0px;
+  padding: 40px 20px 40px 20px;
   width: 250px;
-  height: 400px;
   cursor: pointer;
 }
 
 .movieCards > img {
   width: 220px;
-  height: auto;
   border-radius: 20px;
   transition: 0.5s;
   transition-delay: 0.2s;
@@ -107,23 +101,13 @@ body {
   transition-delay: 0.2s;
 }
 
-@media screen and (max-height: 1800px) {
-    .resultContainer{
-      height: 1350px;
-    }
-}
-
-@media screen and (max-height: 1600px) {
-  .resultContainer{
-    height: 1100px;
+@media screen and (max-width: 1800px) {
+  .resultContainer {
+    grid-template-columns: auto auto auto auto;
   }
 }
 
-@media screen and (max-height: 1250px) {
-  .resultContainer{
-    height: 800px;
-  }
-}
+
 
 @media screen and (max-width: 1250px) {
     .resultContainer {
